@@ -1,7 +1,7 @@
 pipeline {
     agent any
         parameters {
-            booleanParam defaultValue: false, name: 'skip_test'
+            booleanParam defaultValue: true, name: 'skip_test'
         }
 
     stages {

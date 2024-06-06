@@ -20,7 +20,7 @@ pipeline {
 def execute_stage(stage_name,skip){
     stage(stage_name){
         if(skip){
-            echo "skipping ${stage_naem} stage"
+            echo "skipping ${stage_name} stage"
             return
         }
     }

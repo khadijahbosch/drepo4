@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    parameters {
+        booleanParam defaultValue: false, name: 'skip_test'
+    }
 
     stages {
         stage('build') {
@@ -8,6 +11,7 @@ pipeline {
             }
         }
         stage('test') {
+            when {expression {param.skip_test !=true}}
             parallel {
                 stage('unit test') {
                     steps {
